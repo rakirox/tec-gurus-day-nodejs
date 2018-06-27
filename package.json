@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && node ./server/index.js"
   },
   "keywords": [
     "proyecto",
@@ -14,7 +15,10 @@
   "author": "Carlos Palmero",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "mongoose": "^5.1.5",
+    "socket.io": "^2.1.1"
   }
 }

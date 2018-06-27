@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./socket.io.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="caja">
+
+    </div>
+    <div class="">
+      <input type="text" name="" value="" id="inputText" onEnter="">
+    </div>
+    <div class="" id="ultimoMensaje">
+
+    </div>
+    <script>
+      // console.log(io);
+      var socket = io.connect('http://localhost:8080',{'forceNew':true});
+      socket.on('mensaje', (data) => {
+        document.getElementById('ultimoMensaje').appendChild(document.createTextNode(data));
+      })
+      document.getElementById('inputText').addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          console.log('enter pressed');
+          socket.emit('agregar-mensaje',document.getElementById('inputText').value)
+        }
+      })
+      console.log();
+    </script>
+  </body>
+</html>
